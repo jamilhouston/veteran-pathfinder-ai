@@ -7,7 +7,7 @@ A responsive Flask application with olive, dark green, sand and off-white stylin
 ## Run on Replit
 
 1. Import this ZIP into Replit, or create a Python app and upload the extracted contents. `app.py`, `requirements.txt`, `.replit`, `templates/` and `static/` must be at the project root, not inside an extra folder. Enable hidden files to see `.replit`.
-2. Select Run. The included run command installs dependencies and starts the app on `0.0.0.0:3000`. If Replit does not adopt that command, run `pip install -r requirements.txt` followed by `python app.py` in its Shell.
+2. Install dependencies from `requirements.txt` once, then select Run. The Replit run command starts the app on `0.0.0.0:5000`. The configured **Start application** workflow runs `PORT=5000 python app.py`.
 3. Open the HTTPS preview in a full browser tab. Strict cookies may not work in an embedded cross-site frame.
 4. Select **Try a sample profile** and continue through the form. Demo mode needs no API key.
 
@@ -21,7 +21,7 @@ Add `OPENAI_API_KEY` in Replit **Secrets**, never in frontend code or committed 
 | --- | --- | --- |
 | OPENAI_API_KEY | unset | Enables optional server-side OpenAI integration |
 | OPENAI_MODEL | gpt-4.1-mini | Model identifier; account availability may vary |
-| PORT | 3000 | Listening port; update Replit port mapping if changed |
+| PORT | 3000 locally; 5000 in Replit | Listening port; update Replit port mapping if changed |
 | COOKIE_SECURE | true | HTTPS-only session cookie; false only for local HTTP |
 
 `.env.example` documents settings; the app does **not** automatically load `.env`. Use environment variables / Replit Secrets.

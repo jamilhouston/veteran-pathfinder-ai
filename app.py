@@ -44,8 +44,8 @@ def protect():
 @app.after_request
 def headers(response):
     response.headers.update({'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff',
-        'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'DENY',
-        'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"})
+        'Referrer-Policy': 'no-referrer',
+        'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'self' https://replit.com https://*.replit.com; base-uri 'none'; form-action 'self'"})
     if os.getenv('COOKIE_SECURE', 'true').lower() == 'true':
         response.headers['Strict-Transport-Security'] = 'max-age=31536000'
     return response
