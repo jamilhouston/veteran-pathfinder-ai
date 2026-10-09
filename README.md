@@ -1,3 +1,27 @@
+# Veteran Pathfinder — Career Transition Assistant
+
+**Applied AI · Workforce transition · Responsible product design**
+
+[Try the Replit demo](https://pathfinder-replitzip.replit.app) · [Portfolio and other projects](https://jamilhouston.com/labs)
+
+## Portfolio case study
+
+Pathfinder is an exploratory career-planning web application built around a specific problem: helping veterans translate military responsibilities into language and possibilities that make sense in civilian employment. Its goal is to **support user judgment**, not select careers on a veteran's behalf.
+
+**My contribution:** identified the veteran transition use case, defined the desired experience and privacy priorities, built and iterated the application using Replit/AI-assisted development, and documented the architecture and project presentation.
+
+**Stack:** Python, Flask, Waitress, server-rendered HTML/Jinja, CSS, JavaScript, optional OpenAI Responses API, and automated Python unit tests.
+
+**What the demo offers:** a guest profile workflow; illustrative, keyword-ranked career paths; transferable-skills explanations; gaps and next steps; resume draft text; export/delete controls; and a separately consented optional AI generation mode.
+
+**Verification:** ten automated backend tests passed in an October 2026 source inspection. Real-provider AI success and professional counselor evaluation were not independently confirmed.
+
+**Presentation:** a six-slide course project deck explains the veteran employment ecosystem, solution life cycle, system architecture, example journey, and pilot considerations. The PDF will be uploaded separately.
+
+**Status:** educational working prototype. No government or military affiliation, authoritative career-match guarantee, or production readiness is claimed.
+
+---
+
 # Pathfinder — Veteran Career Transition
 
 Problem identification: Helping military members prepare for a transition into the civilian sector.
@@ -11,7 +35,7 @@ A responsive Flask application with olive, dark green, sand and off-white stylin
 3. Open the HTTPS preview in a full browser tab. Strict cookies may not work in an embedded cross-site frame.
 4. Select **Try a sample profile** and continue through the form. Demo mode needs no API key.
 
-The ZIP contains source files, not a prebuilt environment. First run requires package download access. This package was tested locally; it has not been deployed into your Replit account.
+The ZIP contains source files, not a prebuilt environment. First run requires package download access. The application has been deployed on Replit as a demo. The historical import ZIP is not the authoritative current implementation; use the current source files.
 
 ## Optional live AI
 
@@ -46,7 +70,7 @@ Open http://localhost:3000. The entrypoint uses Waitress, with no debug mode. Ru
 
 **Demo:** A small, transparent keyword-ranked catalog, not an authoritative occupational crosswalk or validated matching system. It uses the submitted profile to generate illustrative pathways. Resume bullets intentionally contain placeholders. All submitted career fields are included in review and export; the demo does not deeply interpret education or work location.
 
-**AI:** Sends the sanitized career fields only, uses structured output, validates the returned structure, and renders model text as text rather than HTML. The prompt requests individualized explanations and prevents invented resume achievements. Neither prompting nor sanitization guarantees a model will be correct. If the provider fails, times out, refuses, or returns malformed output, the app shows a labeled demo fallback. No browsing, tools, automated applications, or employment decisions are made.
+**AI:** Sends the sanitized career fields only, uses structured output, validates the returned structure, and renders model text as text rather than HTML. The prompt requests individualized explanations and instructs the model not to invent resume achievements, but these instructions cannot ensure factual accuracy. Neither prompting nor sanitization guarantees a model will be correct. If the provider fails, times out, refuses, or returns malformed output, the app shows a labeled demo fallback. No browsing, tools, automated applications, or employment decisions are made.
 
 ## Privacy and data model
 
@@ -64,7 +88,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for boundaries and production requirement
 
 ## Deployment boundaries
 
-This is a functional project/demo starter, not a certified production system. Use a **single always-on process/instance** for this in-memory design; do not use multiple workers or autoscaling replicas. Ephemeral instance changes intentionally lose sessions. For public use, add a shared TTL session store, infrastructure rate limiting and global spend caps, security review, a reviewed privacy notice, operational monitoring without career content, and backup/deletion policies for any future storage. Per-session limits here can be bypassed by creating new sessions; do not expose an unrestricted paid API key on a public deployment.
+This is a functional project/demo starter, not a certified production system. Use a **single always-on process/instance** for this in-memory design; do not use multiple workers or autoscaling replicas. **Deployment caveat:** the current Replit deployment is configured as Autoscale, which does not meet that recommendation; sessions may disappear or behave inconsistently if instances are replaced or scaled. Ephemeral instance changes intentionally lose sessions. For public use, add a shared TTL session store, infrastructure rate limiting and global spend caps, security review, a reviewed privacy notice, operational monitoring without career content, and backup/deletion policies for any future storage. Per-session limits here can be bypassed by creating new sessions; do not expose an unrestricted paid API key on a public deployment.
 
 If persistent accounts are added, keep identity in a separate protected store; link through a random subject identifier. Add authenticated authorization on every access, encryption at rest with managed keys, and explicit opt-in retention. Do not simply replace guest IDs with emails.
 
@@ -84,3 +108,10 @@ If persistent accounts are added, keep identity in a separate protected store; l
 - [Replit project configuration](https://docs.replit.com/references/project-setup/configuration)
 
 Recommendations are exploratory, not deterministic. No military, Army, DoD or VA affiliation is implied.
+
+## GitHub portfolio housekeeping
+
+- The tracked `zipFile.zip` is an older source snapshot and should be removed from the public-facing repo (with history and sensitive-file review) rather than presented as the maintained code.
+- The current session data is kept in process memory, so it is not durable or shared across separate instances. Do not use real personal transition records for public demos.
+- Actual paid-provider AI completion, broad accessibility checks, and veteran-counselor quality review remain future validation steps.
+- The presentation PDF should be added under `docs/` once reviewed for public sharing.
