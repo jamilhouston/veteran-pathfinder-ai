@@ -111,7 +111,7 @@ Recommendations are exploratory, not deterministic. No military, Army, DoD or VA
 
 ## GitHub portfolio housekeeping
 
-- The tracked `zipFile.zip` is an older source snapshot and should be removed from the public-facing repo (with history and sensitive-file review) rather than presented as the maintained code.
+- The redundant original `zipFile.zip` was removed from the current branch; older commits may still retain that source snapshot. The maintained application code is in the current repository files.
 - The current session data is kept in process memory, so it is not durable or shared across separate instances. Do not use real personal transition records for public demos.
 - Actual paid-provider AI completion, broad accessibility checks, and veteran-counselor quality review remain future validation steps.
 - The presentation PDF should be added under `docs/` once reviewed for public sharing.
