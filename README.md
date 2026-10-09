@@ -16,7 +16,7 @@ Pathfinder is an exploratory career-planning web application built around a spec
 
 **Verification:** ten automated backend tests passed in an October 2026 source inspection. Real-provider AI success and professional counselor evaluation were not independently confirmed.
 
-**Presentation:** a six-slide course project deck explains the veteran employment ecosystem, solution life cycle, system architecture, example journey, and pilot considerations. The PDF will be uploaded separately.
+**Presentation:** [View the six-slide course project deck (PDF)](Pathfinder%20Veteran%20Transition.pdf), covering the veteran employment ecosystem, solution life cycle, system architecture, example journey, and pilot considerations.
 
 **Status:** educational working prototype. No government or military affiliation, authoritative career-match guarantee, or production readiness is claimed.
 
