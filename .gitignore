@@ -2,3 +2,33 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Environment credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local data, exports, user profiles and generated artifacts
+uploads/
+exports/
+downloads/
+private/
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Local tools and caches
+.pytest_cache/
+.coverage
+htmlcov/
+.pythonlibs/
+venv/
+.DS_Store
+
+# Don't recommit old ZIP import snapshots
+zipFile.zip
